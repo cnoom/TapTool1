@@ -1,20 +1,14 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using TapSDK.Login;
 
 namespace com.cnoom.taptool.Runtime.Login
 {
     public interface ITapLogin
     {
         /// <summary>
-        /// 登录回调
+        /// 初始化
         /// </summary>
-        Action<TapTapAccount> onLogin { get; set; }
-        
-        /// <summary>
-        /// 当前登录用户
-        /// </summary>
-        TapTapAccount account { get; }
+        void Init();
         
         /// <summary>
         /// 登录

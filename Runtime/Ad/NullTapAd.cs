@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using TapTap.TapAd;
+using com.cnoom.taptool.Runtime.Common;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace com.cnoom.taptool.Runtime.Ad
 {
     public class NullTapAd : ITapAd
     {
-        private Dictionary<RewardAdInfo, TapRewardVideoAd> adDic = new Dictionary<RewardAdInfo, TapRewardVideoAd>();
 
         public void Init()
         {
@@ -14,25 +14,18 @@ namespace com.cnoom.taptool.Runtime.Ad
         }
         public void Load(RewardAdInfo info)
         {
-            if(adDic.ContainsKey(info))
-            {
-                return;
-            }
-            var requeset = new TapAdRequest.Builder()
-                .SpaceId(info.adId)
-                .RewardName(info.rewardItem.name)
-                .RewardCount(info.rewardItem.number)
-                .Build();
-            adDic.Add(info, new TapRewardVideoAd(requeset));
+            Debug.Log("TapAd Load");
         }
 
-        public void Show(RewardAdInfo info, Action<TapRewardVideoAd> showCallback, Action onNoAd = null)
+        public void Show(RewardAdInfo info, Action<RewardItem> showCallback, Action onNoAd = null)
         {
-            if(adDic.TryGetValue(info, out var ad))
+            if(Random.Range(0, 10) > 5)
             {
-                showCallback?.Invoke(ad);
+                Debug.Log("TapAd Show");
+                showCallback(new RewardItem("TestItem",1));
                 return;
             }
+            Debug.Log("TapAd No Ad");
             onNoAd?.Invoke();
         }
     }

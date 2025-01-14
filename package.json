@@ -1,8 +1,8 @@
 {
-  "name": "com.cnoom.taptool",
-  "displayName": "Unity Tap Tool",
+  "name": "com.cnoom.taptool1",
+  "displayName": "Unity Tap Tool1",
   "version": "0.9.0",
-  "description": "基于安卓tap使用封装的unity库",
+  "description": "基于安卓tap使用封装的unity库上",
   "main": "index.js",
   "author": {
     "name": "cnoom",

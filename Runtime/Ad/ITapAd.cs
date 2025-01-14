@@ -1,5 +1,5 @@
 ﻿using System;
-using TapTap.TapAd;
+using com.cnoom.taptool.Runtime.Common;
 
 namespace com.cnoom.taptool.Runtime.Ad
 {
@@ -19,6 +19,6 @@ namespace com.cnoom.taptool.Runtime.Ad
         /// 广告完成后的回调
         /// </summary>
         /// <param name="showCallback"></param>
-        void Show(RewardAdInfo info,Action<TapRewardVideoAd> showCallback,Action onNoAd = null);
+        void Show(RewardAdInfo info,Action<RewardItem> showCallback,Action onNoAd = null);
     }
 }

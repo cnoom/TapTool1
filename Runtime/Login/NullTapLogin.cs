@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using TapSDK.Login;
 using UnityEngine;
 
 namespace com.cnoom.taptool.Runtime.Login
@@ -11,24 +10,13 @@ namespace com.cnoom.taptool.Runtime.Login
     public class NullTapLogin : ITapLogin
     {
 
-        public Action<TapTapAccount> onLogin { get; set; }
-
-        public TapTapAccount account { get; } = new TapTapAccount
+        public void Init()
         {
-            accessToken =
-            {
-                kid = "kid",
-                macAlgorithm = "macAlgorithm",
-                macKey = "macKey",
-                scopeSet = new HashSet<string>(),
-                tokenType = "tokenType",
-            }
-        };
-        
+            Debug.Log("TapLogin Init");
+        }
         public void Login()
         {
             Debug.Log("TapLogin Login");
-            onLogin?.Invoke(account);
         }
         
         public void Logout()
@@ -39,7 +27,6 @@ namespace com.cnoom.taptool.Runtime.Login
         public void CheckLogin(Action<bool> onFinish)
         {
             Debug.Log("TapLogin CheckLogin");
-            onLogin?.Invoke(account);
             onFinish?.Invoke(true);
         }
     }
