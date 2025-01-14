@@ -18,9 +18,5 @@
   },
   "resolutionStrategy": "highest",
   "dependencies": {
-    "com.unity.nuget.newtonsoft-json":"3.2.1",
-    "com.google.external-dependency-manager": "1.2.179",
-    "com.taptap.sdk.core":"4.5.2",
-    "com.taptap.sdk.login":"4.5.2"
   }
 }
